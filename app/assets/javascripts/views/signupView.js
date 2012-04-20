@@ -1,5 +1,41 @@
 SignupView = Backbone.View.extend({
   el: '#signup-view',
+  events: { 'submit form': 'createUser' },
+
+  attributes: function() {
+    return {
+      name: this.nameField.val(),
+      email: this.emailField.val(),
+      password: this.passwordField.val(),
+      password_confirmation: this.passwordConfirmationField.val()
+    };
+  },
+
+  createUser: function() {
+    if (this.submitButton.hasClass('disabled') && this.form.data('user-created') !== true) {
+      return false;
+    } else {
+      this.submitButton.addClass('disabled');
+    }
+
+    var self = this,
+    user = new User(this.attributes());
+    user.save(null, {
+      error: function(originalModel, resp, options) {
+        self.$el.find('.control-group').removeClass('error');
+        var errors = JSON.parse(resp.responseText);
+        _.each(errors, function(value,key) {
+          self.$el.find('.control-group').addClass('error');
+        });
+        self.submitButton.removeClass('disabled');
+      },
+      success: function() {
+        self.form.data('user-created', true);
+        document.location.href = '/';
+      }
+    });
+    return (this.form.data('user-created') === true);
+  },
 
   initialize: function() {
     this.form = this.$el.find('form');
