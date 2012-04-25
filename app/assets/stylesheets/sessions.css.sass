@@ -1,0 +1,13 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.squiggle
+  // left: -20px
+  // +transition(left, .2s, ease-in-out)
+  -webkit-animation: squiggle .2s ease-in-out 2 alternate
+
+@-webkit-keyframes squiggle
+  0% { left: 0 }
+  50% { left: -20px }
+  100% { left: 20px }
