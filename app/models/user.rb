@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   validates :password_confirmation, :presence => { :if => :password }
   validates :phone, :format => { :allow_nil => true, :with => /^[()0-9- +.]{10,20} *[extension.]{0,9} *[0-9]{0,5}$/i }
 
+  def self.authenticate(email, pass)
+    user = where(:email => email).first
+    user && BCrypt::Password.new(user.password_digest) == pass ? user : nil
+  end
+
   def password=(pass)
     return if pass.blank?
     @password = pass
