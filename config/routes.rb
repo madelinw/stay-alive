@@ -1,6 +1,6 @@
 Todo::Application.routes.draw do
 
-  match 'signup' => 'users#new', :via => :get
+  match 'login' => 'sessions#new', :via => :get
   match 'logout' => 'sessions#destroy', :via => [:get, :delete]
   match 'signup' => 'users#new', :via => :get
 
