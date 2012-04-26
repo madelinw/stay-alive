@@ -30,15 +30,15 @@ LoginView = Backbone.View.extend({
   },
 
   loginFailure: function() {
-    this.$el.addClass('squiggle');
+    this.$el.addClass("squiggle");
     this.emailField.focus();
     this.submitButton.removeClass('disabled');
-    this.removeClass('squiggle');
-  }
+  },
 
   initialize: function() {
     this.form = this.$el.find('form');
     this.emailField = this.$el.find('input[name=email]');
     this.passwordField = this.$el.find('input[type=submit]');
+    this.submitButton = this.$el.find('input[type=submit]');
   }
 })

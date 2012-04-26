@@ -30,6 +30,7 @@ _.templateSettings = {
 // Routing Based on URL
 Router = {
   '/signup': function () { new SignupView(); },
+  '/login': function() { new LoginView(); },
 
   route: function (path) {
     _.each(Router, function(callback, route) {
