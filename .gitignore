@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-.bundle
 db/*.sqlite3
 log/*.log
-tmp/
 .sass-cache/
 Gemfile.lock
-=======
+
 *.gem
 *.rbc
 .bundle
@@ -24,4 +21,3 @@ tmp
 .yardoc
 _yardoc
 doc/
->>>>>>> 7a632932808a5b984e6cc4ee0951c2837cebfe95
