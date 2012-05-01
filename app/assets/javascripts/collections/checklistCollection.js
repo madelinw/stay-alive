@@ -1,7 +1,7 @@
 var Lists = Backbone.Collection.extend({
 
   model: Checklist,
-  url: '/lists',
+  url: '/checklists',
 
   //localStorage: new Store("checklists-backbone"),
 

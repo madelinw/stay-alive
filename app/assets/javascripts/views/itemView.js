@@ -36,7 +36,8 @@ var ItemView = Backbone.View.extend({
 
   close: function() {
     var value = this.input.val();
-    if (!value) this.clear();
+    // if (!value) this.clear();
+    console.log("model", this.model);
     this.model.save({title: value});
     this.$el.removeClass("editing");
   },

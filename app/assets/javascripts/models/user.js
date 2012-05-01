@@ -1,5 +1,5 @@
 var User = Backbone.Model.extend({
-  url: '/account',
+  url: '/users',
   paramRoot: 'user',
 
   authenticate: function(password,callback) {
@@ -7,7 +7,7 @@ var User = Backbone.Model.extend({
 
     $.ajax({
       type: 'POST',
-      url: '/session.json',
+      url: '/session',
       data: {
         email: this.get('email'),
         password: password

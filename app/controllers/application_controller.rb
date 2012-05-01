@@ -27,6 +27,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def create_user_session(user)
+    session[:user_id] = user.id
+  end
 
   def destroy_user_session
     session[:user_id] = nil

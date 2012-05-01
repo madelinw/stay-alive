@@ -6,7 +6,8 @@ Todo::Application.routes.draw do
 
   resource :session, :only => [:new, :create, :destroy]
   resource :account, :controller => 'users', :except => [:index, :destroy, :show, :edit]        #:only => [:new, :create]
-  resource :lists
+  resource :checklists
+  match '/' => 'checklists#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
