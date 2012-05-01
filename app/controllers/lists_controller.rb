@@ -9,4 +9,16 @@ class ListsController < ApplicationController
     render :json => { :list => "poop" }
   end
 
+  def create
+    render :json => { :list => "poop" }
+  end
+
+  def update
+    render :json => { :list => "poop" }
+  end
+
+  def delete
+    render :json => { :list => "poop" }
+  end
+
 end

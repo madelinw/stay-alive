@@ -1,4 +1,5 @@
 var Checklist = Backbone.Model.extend({
+  urlRoot: "/lists",
 
   defaults: function() {
     return {
