@@ -9,6 +9,7 @@
 //= require underscore
 //= require backbone
 //= require backbone_rails_sync
+//= require handlebars-1.0.0.beta.6
 //= require bootstrap
 //= require_tree ./models
 //= require_tree ./views
@@ -24,8 +25,7 @@ $(document).ajaxSend(function (e, xhr, options) {
 
 // Underscore.js Template Settings
 _.templateSettings = {
-    interpolate: /{{=(.+?)}}/g,
-    evaluate: /{{(.+?)}}/g
+    evaluate: /\{\{(.+?)\}\}/g
 };
 
 // Routing Based on URL

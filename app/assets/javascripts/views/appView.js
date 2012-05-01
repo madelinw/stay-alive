@@ -2,7 +2,7 @@ var AppView = Backbone.View.extend({
 
   el: $("#checklistapp"),
 
-  statsTemplate: _.template($('#stats-template').html()),
+  statsTemplate: Handlebars.compile($('#stats-template').html()),
 
   events: {
     "keypress #new-checklist": "createOnEnter",

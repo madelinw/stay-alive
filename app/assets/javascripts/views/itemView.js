@@ -2,7 +2,7 @@ var ItemView = Backbone.View.extend({
 
   tagName: "li",
 
-  template: _.template($('#item-template').html()),
+  template: Handlebars.compile($('#item-template').html()),
 
   events: {
     "click .toggle"   : "toggleDone",
