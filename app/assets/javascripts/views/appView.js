@@ -57,7 +57,7 @@ var AppView = Backbone.View.extend({
 
   clearCompleted: function() {
     _.each(Lists.done(), function(checklist){ checklist.clear();});
-    retrun false;
+    return false;
   },
 
   toggleAllComplete: function() {

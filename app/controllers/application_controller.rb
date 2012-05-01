@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   def destroy_user_session
     session[:user_id] = nil
   end

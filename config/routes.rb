@@ -5,7 +5,8 @@ Todo::Application.routes.draw do
   match 'signup' => 'users#new', :via => :get
 
   resource :session, :only => [:new, :create, :destroy]
-  resource :account, :controller => 'users', :only => [:new, :create]
+  resource :account, :controller => 'users', :except => [:index, :destroy, :show, :edit]        #:only => [:new, :create]
+  resource :lists
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

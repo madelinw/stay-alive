@@ -12,8 +12,8 @@
 //= require handlebars-1.0.0.beta.6
 //= require bootstrap
 //= require_tree ./models
-//= require_tree ./views
 //= require_tree ./collections
+//= require_tree ./views
 //= require_tree .
 
 
@@ -30,6 +30,7 @@ _.templateSettings = {
 
 // Routing Based on URL
 Router = {
+  
   '/signup': function () { new SignupView(); },
   '/login': function() { new LoginView(); },
 

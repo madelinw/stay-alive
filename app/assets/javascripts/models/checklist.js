@@ -3,7 +3,7 @@ var Checklist = Backbone.Model.extend({
   defaults: function() {
     return {
       title: "empty checklist...",
-      order: Checklist.nextOrder(),
+      order: Lists.nextOrder(),
       done: false
     };
   },

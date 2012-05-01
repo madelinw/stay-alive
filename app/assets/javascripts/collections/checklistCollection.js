@@ -1,8 +1,9 @@
 var Lists = Backbone.Collection.extend({
 
   model: Checklist,
+  url: '/lists',
 
-  localStorage: new Store("checklists-backbone"),
+  //localStorage: new Store("checklists-backbone"),
 
   done: function() {
     return this.filter(function(checklist) { return checklist.get("done"); });
