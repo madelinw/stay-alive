@@ -8,8 +8,8 @@ var ItemView = Backbone.View.extend({
     "click .toggle"   : "toggleDone",
     "dblclick .view"  : "edit",
     "click a.destroy" : "clear",
-    "keypress .edit"  : "updateOnEnter",
-    "blur .edit"      : "close",
+    "keypress input.edit"  : "updateOnEnter",
+    // "blur input.edit"      : "close",
   },
 
   initialize: function() {
@@ -21,7 +21,7 @@ var ItemView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));
     this.$el.toggleClass('done', this.model.get('done'));
-    this.input = this.$('.edit');
+    this.input = this.$('input.edit');
     return this;
   },
 
@@ -36,8 +36,7 @@ var ItemView = Backbone.View.extend({
 
   close: function() {
     var value = this.input.val();
-    // if (!value) this.clear();
-    console.log("model", this.model);
+    if (!value) this.clear();
     this.model.save({title: value});
     this.$el.removeClass("editing");
   },

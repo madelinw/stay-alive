@@ -5,7 +5,12 @@ class ChecklistsController < ApplicationController
   skip_before_filter :only => [:index]
   
   def index
-    #
+    @checklists = Checklist.all
+
+    respond_to do |format|
+      format.html  # index.html.erb
+      format.json  { render :json => @checklists }
+    end
   end
 
   def show
@@ -19,11 +24,17 @@ class ChecklistsController < ApplicationController
   end
 
   def update
-    render :json => { :list => "poop" }
+    Checklist.find(params[:id]).update_attributes!(post_params)
+    # render :json => { :list => "poop" }
   end
 
   def delete
     render :json => { :list => "poop" }
   end
+
+  private
+    def post_params
+      params.slice(:title, :description)
+    end
 
 end
