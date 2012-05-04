@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.content
+  display: block
+
+.container
+  width: 370px
+  input
+    width: 100%
+
+h1
+  text-align: center
+  margin-bottom: 40px
+  padding-bottom: 10px
+  border-bottom: 1px dotted #e0e0e0
+
 #login-view
   position: relative
 
@@ -17,5 +32,27 @@
   100%
     left: 20px
 
-.content
-  display: block
+
+.checklist-item
+  display: inline-block
+  width: 85%
+  input
+    border: none
+    border-bottom: 1px solid #e0e0e0
+    background: white
+    box-shadow: none
+    font-size: 18px
+    .done &
+      text-decoration: line-through
+.close
+  display: inline-block
+
+
+.checklist-box
+  display: inline-block
+  width: 5%
+  input
+    margin: 0
+
+#create-item
+  margin-top: 40px

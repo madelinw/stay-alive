@@ -9,7 +9,7 @@ var ItemView = Backbone.View.extend({
     "dblclick .view"  : "edit",
     "click a.destroy" : "clear",
     "keypress input.edit"  : "updateOnEnter",
-    // "blur input.edit"      : "close",
+    "blur input.edit"      : "close",
   },
 
   initialize: function() {

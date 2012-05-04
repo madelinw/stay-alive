@@ -1,30 +1,22 @@
-<div id="checklistapp">
-<div class="title">
-  <h1>Stay Alive with Checklists</h1>
-</div>
+<h1>Stay Alive with Checklists</h1>
+<div id="checklistapp" class="container">
 
-<div class="content" id="main">
-
-  <div id="lists">
-    <ul id="check-list"></ul>
+  <div id="main">
+    <ul id="check-list" class="unstyled"></ul>
   </div>
 
-  <div id="create-item">
-    <input id="new-checklist" placeholder="Add a Task" type="text" />
-  </div>
-
-  <div id="stats-template"></div>
-  </div>
-
+  <label id="create-item">
+    <input id="new-checklist" placeholder="+ Add a Task" type="text" />
+  </label>
 </div>
 <script type="text/x-handlebars-template" id="item-template">
   <div class="checklist {{#if done }} done {{/if}}">
-    <div class="display">
-      <input class="toggle" type="checkbox" {{# if done }} checked="checked" {{/if}} />
-      <a class="destroy" href="#"></a>
-    </div>
-    <div class="edit">
+    <label class="display checklist-box">
+      <input class="display toggle" type="checkbox" {{# if done }} checked="checked" {{/if}} />
+    </label>
+    <label class="edit checklist-item">
       <input class="edit" type="text" value="{{ title }}" />
-    </div>
+    </label>
+    <a class="close destroy" href="#">&times;</a>
   </div>
 </script>

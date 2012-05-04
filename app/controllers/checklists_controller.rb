@@ -25,11 +25,13 @@ class ChecklistsController < ApplicationController
 
   def update
     Checklist.find(params[:id]).update_attributes!(post_params)
-    # render :json => { :list => "poop" }
+    render :json => { :list => "poop" }
   end
 
-  def delete
-    render :json => { :list => "poop" }
+  def destroy
+    checklist = Checklist.find(params[:id])
+    checklist.destroy
+    render :json => {:message => "success"}
   end
 
   private
