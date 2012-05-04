@@ -1,42 +1,41 @@
-<div id="signup-view" class="container">
-  <div class="page-header">
-    <h1>Bear Polar Bear Bear's Iceburg Snowcone Iceburgs.</h1>
+<div id="signup-view">
+  <h1>Bear Polar Bear Bear's Iceburg Snowcone Iceburgs.</h1>
+  <div class="container">
+
+    <%= form_tag account_path, :class => 'form-horizontal' do %>
+      <div class="control-group">
+        <%= label_tag :name, nil, :class => 'control-label' %>
+        <div class="controls">
+          <%= text_field_tag :name, nil, :placeholder => 'Roy G. Biv' %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= label_tag :email, nil, :class => 'control-label' %>
+        <div class="controls">
+          <%= text_field_tag :email, nil, :placeholder => 'beans@milkduds.com' %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= label_tag :password, nil, :class => 'control-label' %>
+        <div class="controls">
+          <%= password_field_tag :password %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= label_tag :password_confirmation, 'Confirm', :class => 'control-label' %>
+        <div class="controls">
+          <%= password_field_tag :password_confirmation %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "Signup", :class => 'btn btn-primary' %>
+        <div class='clear'></div>
+      </div>
+
+    <% end %>
   </div>
-
-  <%= form_tag account_path, :class => 'form-horizontal' do %>
-    <div class="control-group">
-      <%= label_tag :name, nil, :class => 'control-label' %>
-      <div class="controls">
-        <%= text_field_tag :name, nil, :placeholder => 'Robert A. Jones' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= label_tag :email, nil, :class => 'control-label' %>
-      <div class="controls">
-        <%= text_field_tag :email, nil, :placeholder => 'robert@example.com' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= label_tag :password, nil, :class => 'control-label' %>
-      <div class="controls">
-        <%= password_field_tag :password %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= label_tag :password_confirmation, 'Confirm', :class => 'control-label' %>
-      <div class="controls">
-        <%= password_field_tag :password_confirmation %>
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <%= submit_tag "Signup", :class => 'btn btn-primary' %>
-      <div class='clear'></div>
-    </div>
-
-  <% end %>
-  <div class='clear'></div>
 </div>

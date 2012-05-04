@@ -1,14 +1,16 @@
 <div id="login-view">
-  <aside>
-    <h1>Sign in to Bear Polar Bear Bear's Iceburg Snowcone Iceburgs.</h1>
-  </aside>
-  <%= form_tag session_path do %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+  <h1>Sign in to Bear Polar Bear Bear's Iceburg Snowcone Iceburgs.</h1>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+  <div class="container">
 
-    <%= submit_tag "Log In" %>
-  <% end %>
+    <%= form_tag session_path do %>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email] %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+
+      <%= submit_tag "Log In" %>
+    <% end %>
+  </div>
 </div>

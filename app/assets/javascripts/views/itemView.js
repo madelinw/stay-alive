@@ -15,7 +15,6 @@ var ItemView = Backbone.View.extend({
   initialize: function() {
     this.model.bind('change', this.render, this);
     this.model.bind('destroy', this.remove, this);
-    console.log("init item view");
   },
 
   render: function() {
