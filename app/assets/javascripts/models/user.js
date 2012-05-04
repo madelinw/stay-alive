@@ -1,5 +1,5 @@
 var User = Backbone.Model.extend({
-  url: '/users',
+  url: 'account',
   paramRoot: 'user',
 
   authenticate: function(password,callback) {

@@ -32,7 +32,7 @@ var AppView = Backbone.View.extend({
       this.footer.show();
       this.footer.html(this.statsTemplate({done: done}));
     } else {
-      this.main.hide();
+      // this.main.hide();
       this.footer.hide();
     }
 

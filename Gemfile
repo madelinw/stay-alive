@@ -5,9 +5,10 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'pg', '0.13.2'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'email_validator'
+gem 'taps'
 
 gem 'json'
 
