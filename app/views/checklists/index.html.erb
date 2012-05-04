@@ -6,8 +6,6 @@
 <div class="content" id="main">
 
   <div id="lists">
-    <input class="toggle mark-all-done" type="checkbox" />
-    <label for="check-all" id="toggle-all">Mark all as complete</label>
     <ul id="check-list"></ul>
   </div>
 
@@ -23,7 +21,6 @@
   <div class="checklist {{#if done }} done {{/if}}">
     <div class="display">
       <input class="toggle" type="checkbox" {{# if done }} checked="checked" {{/if}} />
-      <label class="view">{{ title }}</label>
       <a class="destroy" href="#"></a>
     </div>
     <div class="edit">
