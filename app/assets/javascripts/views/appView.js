@@ -2,17 +2,15 @@ var AppView = Backbone.View.extend({
 
   el: $("#checklistapp"),
 
-  statsTemplate: Handlebars.compile($('#stats-template').html()),
-
   events: {
     "keypress #new-checklist": "createOnEnter",
-    "click #clear-completed": "clearCompleted",
-    "click #toggle-all": "toggleAllComplete"
+    // "click #clear-completed": "clearCompleted",
+    // "click #toggle-all": "toggleAllComplete"
   },
 
   initialize: function() {
     this.input = this.$("#new-checklist");
-    this.allCheckbox = this.$("#toggle-all")[0];
+    // this.allCheckbox = this.$("#toggle-all")[0];
 
     Lists.bind('add', this.addOne, this);
     Lists.bind('reset', this.addAll, this);
@@ -30,9 +28,7 @@ var AppView = Backbone.View.extend({
     if(Lists.length) {
       this.main.show();
       this.footer.show();
-      this.footer.html(this.statsTemplate({done: done}));
     } else {
-      // this.main.hide();
       this.footer.hide();
     }
 
@@ -55,15 +51,15 @@ var AppView = Backbone.View.extend({
     this.input.val('');
   },
 
-  clearCompleted: function() {
-    _.each(Lists.done(), function(checklist){ checklist.clear();});
-    return false;
-  },
+  // clearCompleted: function() {
+  //   _.each(Lists.done(), function(checklist){ checklist.clear();});
+  //   return false;
+  // },
 
-  toggleAllComplete: function() {
-    var done = this.allCheckbox.checked;
-    Lists.each(function(checklist){ checklist.save({'done': done}); });
-  }
+  // toggleAllComplete: function() {
+  //   var done = this.allCheckbox.checked;
+  //   Lists.each(function(checklist){ checklist.save({'done': done}); });
+  // }
 });
 
 var App = new AppView;
