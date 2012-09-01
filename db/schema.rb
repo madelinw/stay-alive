@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120501054759) do
   end
 
   create_table "items", :force => true do |t|
-    t.integer  "user_id",     :null => false
+    t.integer  "checklist_id", :null => false
     t.string   "title"
     t.text     "description"
     t.boolean  "done"

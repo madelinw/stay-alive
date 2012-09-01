@@ -9,6 +9,19 @@
     <input id="new-checklist" placeholder="+ Add a Task" type="text" />
   </label>
 </div>
+
+<script type="text/x-handlebars-template" id="checklist-template">
+  <div class="checklist {{#if done }} done {{/if}}">
+    <label class="display checklist-box">
+      <input class="display toggle" type="checkbox" {{# if done }} checked="checked" {{/if}} />
+    </label>
+    <label class="edit checklist-item">
+      <input class="edit" type="text" value="{{ title }}" />
+    </label>
+    <a class="close destroy" href="#">&times;</a>
+  </div>
+</script>
+
 <script type="text/x-handlebars-template" id="item-template">
   <div class="checklist {{#if done }} done {{/if}}">
     <label class="display checklist-box">

@@ -12,20 +12,20 @@ var AppView = Backbone.View.extend({
     this.input = this.$("#new-checklist");
     // this.allCheckbox = this.$("#toggle-all")[0];
 
-    Lists.bind('add', this.addOne, this);
-    Lists.bind('reset', this.addAll, this);
-    Lists.bind('all', this.render, this);
+    Items.bind('add', this.addOne, this);
+    Items.bind('reset', this.addAll, this);
+    Items.bind('all', this.render, this);
 
     this.footer = this.$("footer");
     this.main = $('#main');
 
-    Lists.fetch();
+    Items.fetch(this.id);
   },
 
   render: function() {
-    var done = Lists.done().length;
+    var done = Items.done().length;
 
-    if(Lists.length) {
+    if(Items.length) {
       this.main.show();
       this.footer.show();
     } else {
@@ -34,31 +34,32 @@ var AppView = Backbone.View.extend({
 
   },
 
-  addOne: function(checklist) {
-    var view = new ItemView({model: checklist});
+  addOne: function(item) {
+    var view = new ItemView({model: item});
+    view.render();
     this.$("#check-list").append(view.render().el);
   },
 
   addAll: function() {
-    Lists.each(this.addOne);
+    Items.each(this.addOne);
   },
 
   createOnEnter: function(e) {
     if (e.keyCode != 13) return;
     if (!this.input.val()) return;
 
-    Lists.create({title: this.input.val()});
+    Items.create({title: this.input.val()});
     this.input.val('');
   },
 
   // clearCompleted: function() {
-  //   _.each(Lists.done(), function(checklist){ checklist.clear();});
+  //   _.each(Items.done(), function(checklist){ checklist.clear();});
   //   return false;
   // },
 
   // toggleAllComplete: function() {
   //   var done = this.allCheckbox.checked;
-  //   Lists.each(function(checklist){ checklist.save({'done': done}); });
+  //   Items.each(function(checklist){ checklist.save({'done': done}); });
   // }
 });
 

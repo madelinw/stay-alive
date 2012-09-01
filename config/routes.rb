@@ -3,11 +3,11 @@ Todo::Application.routes.draw do
   match 'login' => 'sessions#new', :via => :get
   match 'logout' => 'sessions#destroy', :via => [:get, :delete]
   match 'signup' => 'users#new', :via => :get
-  match '/' => 'checklists#index'
+  match '/' => 'items#index'
 
   resource :session, :only => [:new, :create, :destroy]
   resource :account, :controller => 'users', :except => [:index, :destroy, :show, :edit]        #:only => [:new, :create]
-  resources :checklists
+  resources :items
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

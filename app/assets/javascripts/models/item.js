@@ -1,10 +1,11 @@
-var Checklist = Backbone.Model.extend({
-  urlRoot: "/checklists",
+var Item = Backbone.Model.extend({
+  urlRoot: "/items",
 
   defaults: function() {
+    console.log(this);
     return {
-      title: "+ Add a checklist",
-      order: Checklists.nextOrder(),
+      title: "+ Add a task",
+      order: Items.nextOrder(),
       done: false
     };
   },
@@ -13,6 +14,10 @@ var Checklist = Backbone.Model.extend({
     if (!this.get("title")) {
       this.set({"title": this.defaults.title});
     };
+  },
+
+  toggle: function() {
+    this.save({done: !this.get("done")});
   },
 
   clear: function() {
